@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style2.css" />
+    <title>Jawaban Pendaftar</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Jawaban Pendaftar</h1>
+      <div class="table-container">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Password</th>
+              <!-- Kolom Password ditambahkan -->
+            </tr>
+          </thead>
+          <tbody id="responseTable">
+            <!-- Data akan diisi oleh JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      <p>© Sikah Nubuahtul Ilmi - Tugas Praktikum Pemweb 2024</p>
+    </footer>
+
+    <script>
+      // Ambil data dari localStorage
+      const responses = JSON.parse(localStorage.getItem("responses")) || [];
+
+      // Reference ke body tabel
+      const responseTable = document.getElementById("responseTable");
+
+      // Masukkan data ke tabel
+      responses.forEach((response, index) => {
+        const row = document.createElement("tr");
+        row.classList.add(index % 2 === 0 ? "even" : "odd");
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${response.username}</td>
+            <td>${response.email}</td>
+            <td>${response.password}</td> <!-- Menampilkan password -->
+          `;
+        responseTable.appendChild(row);
+      });
+    </script>
+  </body>
+</html>

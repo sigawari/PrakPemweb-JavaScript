@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-image: url(assets/bebep.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: rgba(247, 243, 243, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+}
+
+h1 {
+  color: #a71b1b;
+  text-align: center;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #090910;
+}
+
+.btn-primary {
+  background-color: #a71b1b;
+  border: none;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #090910;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem;
+  }
+}
